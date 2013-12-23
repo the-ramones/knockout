@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2>Knockout.js evaluation</h2>
+        <hr />
+
+        <h3>Part 3. Simple data binding</h3>        
+        <div>
+            <p><span data-bind="text: firstname">'s</span> Shopping Cart</p>
+        </div>
+        <hr />
+
+
+        <h3>Part 4. Observables</h3>
+        <div>
+            <p>First name: <span data-bind="text: firstname"></span></p>
+            <p>Last name: <span data-bind="text: lastname"></span></p>
+
+            <p>Enter a first name: <input data-bind="value: firstname"/></p>
+            <p>Enter a last name: <input data-bind="value: lastname"/></p>
+
+            <p>Full name: <span style="font-weight: bold" data-bind="text: fullname"></span></p>
+
+            <p><input type="button" value="Print a full name" data-bind="click: print"/><p>
+        </div>
+
+        <hr />
+
+        <h3>Part 5. Observable arrays</h3>
+        <div id="observableArrays">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: cart">
+                    <tr>
+                        <td data-bind="text: name"></td>
+                        <td data-bind="text: price"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr />
+
+        <script src="js/knockout-2.1.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            // Part 3
+            var personViewModel =  {
+            firstname : 'John',
+            lastname: 'Smith'
+            };
+
+            //ko.applyBindings(personViewModel);
+
+            // Doesn't work
+            personViewModel.firstName = "Ryan";
+            personViewModel.lastname = "Gosling";
+
+            // Part 4
+            function ObservablePersonViewModel() {
+
+            var self = this;
+            self.firstname = ko.observable("John");
+            self.lastname = ko.observable("Smith");
+            self.fullname = ko.computed(function() {
+            return self.firstname() + " " + self.lastname();
+            }, this);
+            self.print = function() {
+            alert("Full name is " + self.fullname());
+            };
+
+
+            }
+
+            var observableViewModel = new ObservablePersonViewModel();
+            ko.applyBindings(observableViewModel);
+
+            //should work
+
+            function changeFullName(observable) {
+            return function() {
+            if (observable.firstname() !== "Ryan") {
+            observable.firstname("Ryan");
+            observable.lastname("Gosling");
+            } else {
+            observable.firstname("John");
+            observable.lastname("Smith");
+            }
+            };
+            }
+
+            window.setInterval(changeFullName(observableViewModel), 1000);
+
+            // Part 5. Observable arrays
+            function Product(name, price) {
+            var self = this;
+            self.name = ko.observable(name);
+            self.price = ko.observable(price);
+            }
+
+            var products = [
+            new Product("beer", 5.99),
+            new Product("lager", 4.99),
+            new Product("eal", 1.99),
+            new Product("draught", 10.99),
+            ];
+
+            function ProductCart(products) {
+            var self = this;
+            self.cart = ko.observableArray(products);
+            }
+
+            ko.applyBindings(new ProductCart(products), document.getElementById("observableArrays"));
+
+        </script>
+    </body>
+</html>

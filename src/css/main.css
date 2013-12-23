@@ -1,0 +1,50 @@
+/* Main CSS */
+
+table { 
+    border: 1px dotted tomato;
+}
+
+td, th {
+    padding: 5px 10px;
+}
+
+.timer {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+table input[type="text"]:focus {
+    box-shadow: 0px 2px 2px tomato;
+}
+
+.widget {
+    display: inline-block;
+    float: left;
+    margin: 15px;
+}
+
+.remove {
+    display: inline-block;
+    /*overflow: hidden;*/
+    /*background: url("../times.png");*/
+/*    width: 32px;
+    height: 32px;*/
+    /*text-indent: -9999px;*/
+}
+
+.remove:after {
+    display: inline-block;
+    content: "1 ";
+    text-indent: -9999px; 
+    background: url("../times.png");
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}

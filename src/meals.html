@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Meats-n-Meals Inc. Servant App</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+    </head>
+    <body>
+        <div>
+            <h2>Meats &amp; Meals Inc.</h2>
+        </div>
+
+        <div class="widget">
+            <table>
+                <caption>Static UI</caption>
+                <thead>
+                    <tr>
+                        <th>Passenger Name</th>
+                        <th>Meal</th>
+                        <th>Surcharge</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: seats">
+                    <tr>
+                        <td data-bind="text: name"></td>
+                        <td><input type="text" data-bind="value: meal().name"></td>
+                        <td data-bind="text: meal().price"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Meals&trade; Timer: <span class="timer" data-bind="text: timer"></span>
+            <p>
+                <input type="button" value="Add seat" data-bind="click: addSeat">
+            </p>
+        </div>
+
+        <div class="widget">
+            <table>
+                <caption>Fully Editable UI</caption>
+                <thead>
+                    <tr>
+                        <th>Passenger Name</th>
+                        <th>Meal</th>
+                        <th>Surcharge</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: seats">
+                    <tr>
+                        <td><input data-bind="value: name"></td>
+                        <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'name'"></select></td>
+                        <td data-bind="text: formattedPrice"></td>
+                        <td><a class="remove" data-bind="click: $root.removeSeat">Remove</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Meals&trade; Timer: <span class="timer" data-bind="text: timer"></span>
+            <p>
+                <input type="button" value="Add seat" data-bind="click: addSeat">
+            </p>
+        </div>
+        
+        
+        <div class="remove clearfix">1-2-3</div>            
+        <script src="js/knockout-2.1.0.js" type="text/javascript"></script>
+        <script type="text/javascript" src="models/meat-n-meals.js"></script>
+        <script type="text/javascript">
+
+        </script>
+    </body>
+</html>
