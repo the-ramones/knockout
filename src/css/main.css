@@ -24,20 +24,20 @@ table input[type="text"]:focus {
 }
 
 .remove {
-    display: inline-block;
-    /*overflow: hidden;*/
-    /*background: url("../times.png");*/
-/*    width: 32px;
-    height: 32px;*/
-    /*text-indent: -9999px;*/
+    /*    background: grey;
+        display: block;
+        text-indent: -5000px;        */
+    background: url("../times.png") no-repeat;
+    display: block;
+    text-indent:  -5000px;
+    height: 32px;
+    width: 32px;
 }
 
-.remove:after {
-    display: inline-block;
-    content: "1 ";
-    text-indent: -9999px; 
-    background: url("../times.png");
-}
+/*.remove:before {
+    display: block;
+    content: " ";
+}*/
 
 .clearfix:before,
 .clearfix:after {
