@@ -1,0 +1,93 @@
+/* Main CSS */
+.container {
+    padding: 10px 10px;
+}
+
+ul.folders {
+    display: block;    
+    list-style: none;
+    background: #ddd;
+    padding: 0 40px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 2px inset;
+}
+
+ul.folders li {
+    display: inline;
+    float: left;
+    padding: 0 0;
+}
+
+ul.folders li a:hover {
+    background: #ccc;
+    box-shadow: 0 0 2px inset;
+}
+
+ul.folders li a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;  
+}
+
+ul.folders li a.selected {
+    background: #ccc;
+    box-shadow: 0 0 2px inset;
+}
+
+table.mailbox {
+    width: 100%;
+    margin-top: 10px;
+}
+
+table.mailbox thead tr {
+    background: #ccc;
+    border: 1px solid black;    
+}
+
+table.mailbox thead th {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;  
+    background: #ddd;
+    box-shadow: 0 0 2px inset;
+    font-weight: normal;
+}
+
+table.mailbox tbody td {
+    padding: 5px 10px;
+}
+
+table.mailbox tbody tr:hover {
+    background: #ddd;
+    cursor: pointer;
+}
+
+th.from {
+    width: 20%;
+}
+
+th.to {
+    width: 20%;
+}
+
+th.subject {
+    width: 40%;
+}
+
+th.date {
+    width: 20%;
+}
+
+/* old */
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}

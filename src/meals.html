@@ -6,8 +6,23 @@
         <link rel="stylesheet" href="css/main.css" type="text/css">
     </head>
     <body>
-        <div>
+        <div style="margin-left: 15px;">
             <h2>Meats &amp; Meals Inc.</h2>
+        </div>
+
+        <div class="control clearfix">
+            <div class="stats">
+                <p>Meals&trade; Timer: <span class="timer" data-bind="text: timer"></span>
+                <p data-bind="visible: totalSurchase() > 0">
+                    Total Surchase: $<b data-bind="text: totalSurchase().toFixed(2)"></b>
+                </p>
+                <p>Total Seats: <span data-bind="text: seats().length"></span></p>
+            </div>
+            <div class="buttons">
+                <p>
+                    <input type="button" value="Add seat" data-bind="click: addSeat, enable: seats().length < 16">
+                </p>            
+            </div>
         </div>
 
         <div class="widget">
@@ -24,14 +39,10 @@
                     <tr>
                         <td data-bind="text: name"></td>
                         <td><input type="text" data-bind="value: meal().name"></td>
-                        <td data-bind="text: meal().price"></td>
+                        <td>$<span data-bind="text: meal().price"></span></td>
                     </tr>
                 </tbody>
             </table>
-            <p>Meals&trade; Timer: <span class="timer" data-bind="text: timer"></span>
-            <p>
-                <input type="button" value="Add seat" data-bind="click: addSeat">
-            </p>
         </div>
 
         <div class="widget">
@@ -41,25 +52,20 @@
                     <tr>
                         <th>Passenger Name</th>
                         <th>Meal</th>
-                        <th>Surcharge</th>
-                        <th></th>
+                        <th colspan="2">Surcharge</th>
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: seats">
                     <tr>
-                        <td><input data-bind="value: name"></td>
+                        <td><input type="text" data-bind="value: name"></td>
                         <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'name'"></select></td>
                         <td data-bind="text: formattedPrice"></td>
                         <td><a href="" class="remove" data-bind="click: $root.removeSeat">Remove</a></td>
                     </tr>
                 </tbody>
             </table>
-            <p>Meals&trade; Timer: <span class="timer" data-bind="text: timer"></span>
-            <p>
-                <input type="button" value="Add seat" data-bind="click: addSeat">
-            </p>
         </div>
-        
+
         <script src="js/knockout-2.1.0.js" type="text/javascript"></script>
         <script type="text/javascript" src="models/meat-n-meals.js"></script>
         <script type="text/javascript">

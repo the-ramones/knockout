@@ -17,27 +17,54 @@ table input[type="text"]:focus {
     box-shadow: 0px 2px 2px tomato;
 }
 
+table caption {
+    font-weight: bold;
+    color: tomato;
+}
+
 .widget {
     display: inline-block;
     float: left;
     margin: 15px;
 }
 
-.remove {
-    /*    background: grey;
-        display: block;
-        text-indent: -5000px;        */
-    background: url("../times.png") no-repeat;
-    display: block;
-    text-indent:  -5000px;
-    height: 32px;
-    width: 32px;
+.control {
+    padding: 0 15px;
+    width: 100%;
 }
 
-/*.remove:before {
+.control .buttons {
     display: block;
-    content: " ";
-}*/
+    width: 25%;
+    float:left;
+}
+
+.control .stats {    
+    display: block;
+    width: 25%;
+    float:left;
+}
+
+.remove {
+    background: url("../img/times24.png") no-repeat center center;
+    display: block;
+    text-indent: -5000px;
+    height: 24px;
+    width: 24px;
+    background-size: 22px 22px;
+}
+
+.remove:hover {
+    background-size: 24px 24px;
+}
+
+a.remove:after {
+    content: "";
+}
+
+a.remove:before {
+    content: "";
+}
 
 .clearfix:before,
 .clearfix:after {
@@ -47,4 +74,17 @@ table input[type="text"]:focus {
 
 .clearfix:after {
     clear: both;
+}
+
+input[type="button"] {
+    border: 0;
+    border-radius: 3px;
+    padding: 5px 10px;
+    background: tomato;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background: coral;
 }

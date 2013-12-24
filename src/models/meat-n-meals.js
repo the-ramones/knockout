@@ -70,12 +70,22 @@ var seats = [
 
 seatReservationViewModel.setAvailableMeals(availableMeals);
 seatReservationViewModel.setSeats(seats);
+seatReservationViewModel.totalSurchase = ko.computed(function() {
+        var total = 0;
+        var l = this.seats().length;
+        for (var i = 0; i < l; i++) {
+            total = total + parseFloat(this.seats()[i].meal().price());
+        }
+        return total;
+    }, seatReservationViewModel);
 
 ko.applyBindings(seatReservationViewModel);
 
 function updatePrices(seats) {
-    return function() {
-        for (i = 0; i < seats.length; i++) {
+    return function() {        
+        var l = seats.length;
+        // define an index variable in yout JS loops!!
+        for (var i = 0; i < l; i++) {
             seats[i].meal().price((seats[i].meal().price() * 1.02).toFixed(2));
         }
     };
