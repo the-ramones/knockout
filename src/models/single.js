@@ -1,4 +1,4 @@
-/* Single Page KKnockout.js application */
+/* Single Page Knockout.js application */
 
 var folders = [
     'Inbox',
@@ -24,14 +24,12 @@ function WebmailViewModel() {
 
     /* Behaviour */
     self.goToFolder = function(folder) {
-        console.log("goToFolder");
         self.chosenFolderId(folder);
         // stop showing an email
         self.chosenMailData(null);
         var url = '/stub';
         var invalid = false;
         folder = folder.toLowerCase().trim();
-        console.log(folder);
         if (folder === "inbox") {
             url = url + '/inbox.json';
         } else if (folder === "archive") {
@@ -41,21 +39,31 @@ function WebmailViewModel() {
         } else if (folder === "draft") {
             url = url + '/draft.json';
         } else if (folder === "spam") {
-            url = url + '/spam.json';
+            url = url + '/spam.json'
         } else {
             invalid = true;
         }
-        console.log(invalid);
-        console.log(invalid !== false);
         if (!invalid) {
             $.get(url, {}, self.chosenFolderData);
         }
     };
     
+    self.goToCurrentFolder = function() {
+        self.goToFolder(self.chosenFolderId());
+    };
+
+    /* Input parameter is a mail print from a table view,
+     * for an actual mail check the server ()stub.
+     * Server tech can be NoSql database like mongoDB, replicated, sharded.
+     * So retrieving of a mail mesage can be very fast operation.
+     * For production an email can have an unique ID field to work with
+     */
     self.goToMail = function(mail) {
-        self.chosenFolderId(mail.folder);
+        // stop showing an email folder
         self.chosenFolderData(null);
-        $.get('', {}, self.chosenMailData);
+        // replace with a server-side data
+        var url = "stub/mail/mail1.json";
+        $.get(url, {}, self.chosenMailData);
     };
 }
 
@@ -63,3 +71,5 @@ var webmailViewModel = new WebmailViewModel();
 webmailViewModel.setFolders(folders);
 
 ko.applyBindings(webmailViewModel);
+
+webmailViewModel.goToFolder("Inbox");

@@ -1,4 +1,5 @@
 /* Main CSS */
+
 .container {
     padding: 10px 10px;
 }
@@ -64,23 +65,40 @@ table.mailbox tbody tr:hover {
     cursor: pointer;
 }
 
-th.from {
+table.mailbox th.from {
     width: 20%;
 }
 
-th.to {
+table.mailbox th.to {
     width: 20%;
 }
 
-th.subject {
+table.mailbox th.subject {
     width: 40%;
 }
 
-th.date {
+table.mailbox th.date {
     width: 20%;
 }
 
-/* old */
+.mail {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.mail .mail-info {
+    background: #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.mail .mail-content {
+    font-style: italic;
+    padding: 10px;
+}
+
+/* Helpers */
 
 .clearfix:before,
 .clearfix:after {
