@@ -1,35 +1,43 @@
 {"mails": [
         {
+            "id": "71",
+            "folder": "sent",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
         {
+            "id": "72",
+            "folder": "sent",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",
             "date": "Dec 16, 2013"
         },
-        {
+        {"id": "73",
+            "folder": "sent",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
-        {
+        {"id": "74",
+            "folder": "sent",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",
             "date": "Dec 16, 2013"
         },
-        {
+        {"id": "75",
+            "folder": "sent",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
-        {
+        {"id": "76",
+            "folder": "sent",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",

@@ -109,3 +109,7 @@ table.mailbox th.date {
 .clearfix:after {
     clear: both;
 }
+
+.hidden {
+    visibility: hidden;
+}

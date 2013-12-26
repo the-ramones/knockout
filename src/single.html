@@ -16,7 +16,7 @@
                 </li>
             </ul>
 
-            <table class="mailbox" data-bind="with: chosenFolderData">
+            <table class="mailbox" data-bind="with: chosenFolderData, css: { hidden: !chosenFolderData }">
                 <thead>
                     <tr>
                         <th class="from">From</th>
@@ -35,7 +35,7 @@
                 </tbody>
             </table>
 
-            <div class="mail" data-bind="with: chosenMailData">
+            <div class="mail" data-bind="with: chosenMailData, css : {hidden: !chosenMailData} ">
                 <div class="mail-info">
                     <h3 data-bind="text: subject"></h3>
                     <p><b>From: </b><span data-bind="text: from"></span></p>
@@ -49,7 +49,8 @@
             </div>
         </div>
         <script src="js/jquery-1.9.1.js"></script>
-        <script src="js/knockout-2.1.0.js" type="text/javascript"></script>
-        <script src="models/single.js" type="text/javascript"></script>
+        <script src="js/sammy-latest.min.js"></script>
+        <script src="js/knockout-2.1.0.js" type="text/javascript"></script>        
+        <script src="models/single-sammy.js" type="text/javascript"></script>
     </body>
 </html>

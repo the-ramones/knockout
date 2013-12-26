@@ -1,11 +1,15 @@
 {"mails": [
         {
+            "id": "24",
+            "folder": "draft",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
             "date": "Apr 26, 2011"
         },
         {
+            "id": "23",
+            "folder": "draft",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",

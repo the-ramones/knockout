@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sammy.js evaluation</title>
+        <meta charset="utf-8">        
+    </head>
+    <body>
+        <div id="main">
+            <h3>Sammy.js showcase</h3>
+            <p></p>
+        </div>
+
+        <p data-bind="text: gamesCount, visible: gamesToPlay().length > 0"></p>
+        <p data-bind="visible: gamesToPlay().length == 0">Current list is empty.</p>
+
+        <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="js/sammy-latest.min.js" type="text/javascript"></script>
+        <script src="js/knockout-2.1.0.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            var app = new Sammy("#main", function() {
+                // include a Mustache plugin
+                this.use('Mustache');
+                // define a 'route'
+                this.get('#/', function() {
+                    // load a data
+                    this.load('stub/post.json')
+                            // render a template
+                            .renderEach('post.mustache')
+                            // seap the DOM with new content
+                            .swap();
+                });
+
+            });
+
+            $(document).ready(function(e) {
+                app.run();
+            });
+        </script>
+    </body>
+</html>

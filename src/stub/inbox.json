@@ -1,82 +1,110 @@
 {"mails": [
         {
+            "id": "40",
+            "folder": "inbox",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
         {
+            "id": "39",
+            "folder": "inbox",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",
             "date": "Dec 16, 2013"
         },
         {
+            "id": "38",
+            "folder": "inbox",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
         {
+            "id": "37",
+            "folder": "inbox",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",
             "date": "Dec 16, 2013"
         },
         {
+            "id": "36",
+            "folder": "inbox",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
         {
+            "id": "35",
+            "folder": "inbox",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",
             "date": "Dec 16, 2013"
         }, {
+            "id": "34",
+            "folder": "inbox",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
             "date": "Apr 26, 2011"
         },
         {
+            "id": "33",
+            "folder": "inbox",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
             "date": "Apr 26, 2011"
         },
         {
+            "id": "32",
+            "folder": "inbox",
             "from": "Madmuasel <mmad@yahoo.com>",
             "to": "Craig David <craig@gmail.com>",
             "subject": "Inbox update",
             "date": "May 12, 2012"
         },
         {
+            "id": "31",
+            "folder": "inbox",
             "from": "Daniel <dan@yahoo.com>",
             "to": "Rihanna <rihanna@stars.com>",
             "subject": "Sent an invitation",
             "date": "Dec 16, 2013"
         },
         {
+            "id": "30",
+            "folder": "inbox",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
             "date": "Apr 26, 2011"
         },
         {
+            "id": "29",
+            "folder": "inbox",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
             "date": "Apr 26, 2011"
         },
         {
+            "id": "28",
+            "folder": "inbox",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
             "date": "Apr 26, 2011"
         },
         {
+            "id": "27",
+            "folder": "inbox",
             "from": "Paul <paul@gmail.com>",
             "to": "Kesha <kesha@yahoo.com>",
             "subject": "Final album release",
