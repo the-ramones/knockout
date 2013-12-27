@@ -12,6 +12,45 @@ ko.bindingHandlers.fadeVisible = {
 
 };
 
+ko.bindingHandlers.jqButton = {
+    init: function(element, vakueAccessor) {
+        $(element).button();
+    },
+    update: function(element, valueAccessor) {
+        var currentValue = valueAccessor();
+        $(element).button("option", "disabled", currentValue.enable === false);
+    }
+};
+
+ko.bindingHandlers.starRating = {
+    init: function(element, valueAcessor) {
+        $(element).addClass("startRating");
+        for (i = 0; i < 5; i++) {
+            $("<span>").appendTo(element);
+        }
+        $("span", element).each(function(index) {
+            $(this).hover(
+                    function() {
+                        $(this).prevAll().add(this).addClass("hoverChosen")
+                    },
+                    function() {
+                        $(this).prevAll().add(this).removeClass("hoverChosen")
+                    }
+            ).click(function() {
+                var observable = valueAccessor();    // Get the associated observable
+                observable(index + 1);               // Write the new rating to it
+            });
+        });
+    },
+    update: function(element, valueAccessor) {
+        var observable = valueAccessor();
+        $("span", element).each(function(index) {
+            $(this).toggleClass("chosen", index < observable());
+        });
+    }
+};
+
+
 
 function Answer(text) {
     var self = this;
@@ -21,13 +60,11 @@ function Answer(text) {
 
 function SurveyViewModel(question, pointsBudget, answers) {
     var self = this;
-
     self.question = question;
     self.pointsBudget = pointsBudget;
     self.answers = $.map(answers, function(text) {
         return new Answer(text);
     });
-
     self.save = function() {
         alert("To do");
     };
@@ -47,6 +84,5 @@ var survey = new SurveyViewModel("What do you expext from a new attendee?", 10, 
     "Hard-working",
     "Stubborness"
 ]);
-
 ko.applyBindings(survey);
 

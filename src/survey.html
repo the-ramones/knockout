@@ -4,6 +4,7 @@
         <title>Online Survey&trade;</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="js/jquery-ui-1.10.3/css/ui-lightness/jquery-ui-1.10.3.custom.min.css" type="text/css">
         <link rel="stylesheet" href="css/single.css" type="text/css">
     </head>
     <body>
@@ -11,22 +12,24 @@
             <h3 data-bind="text: question"></h3>
             <p>Please distribute <b data-bind="text: pointsBudget"></b> points between the following options.</p>
 
-            <table>
+            <table class="survey">
                 <thead><tr><th>Option</th><th>Importance</th></tr></thead>
                 <tbody data-bind="foreach: answers">
                     <tr>
                         <td data-bind="text: answerText"></td>
-                        <td><select data-bind="options: [1,2,3,4,5], value: points"></select></td>
+                        <!--<td><select class="wide" data-bind="options: [1,2,3,4,5], value: points"></select></td>-->
+                        <td data-bind="starRating: points"></td>
                     </tr>    
                 </tbody>
             </table>
 
             <h3 data-bind="fadeVisible: pointsUsed() > pointsBudget">You've used too many points! Please remove some.</h3>
             <p>You've got <b data-bind="text: pointsBudget - pointsUsed()"></b> points left to use.</p>
-            <button data-bind="enable: pointsUsed() <= pointsBudget, click: save">Finished</button>
+            <button data-bind="jqButton: { enable: pointsUsed() <= pointsBudget}, click: save">Finished</button>
         </div>
 
         <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/jquery-ui-1.10.3/js/jquery-ui-1.10.3.custom.min.js"></script>
         <script src="js/sammy-latest.min.js"></script>
         <script src="js/knockout-2.1.0.js" type="text/javascript"></script>        
         <script src="models/survey.js" type="text/javascript"></script>

@@ -98,6 +98,17 @@ table.mailbox th.date {
     padding: 10px;
 }
 
+
+/* Survey */
+
+.wide {
+    width: 50px;    
+}
+
+table.survey tr {
+    padding: 10px;
+}
+
 /* Helpers */
 
 .clearfix:before,
