@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;    
+}
+
+.container {
+    background: darkseagreen;
+    min-height: 100% !important;
+    padding: 20px;
+}
+
+.in {
+    position: relative;
+    background: darksalmon;
+    padding: 20px;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+}
+
+.in h2 {
+    text-align: center; 
+    color: grey;
+}
+
+.in h3 {
+    font-weight: normal;   
+}
+
+.in input[type="text"] {
+    padding: 5px 10px;
+    width: 50%;
+    border-radius: 3px;
+    font-size: 1.2em;
+    left: 24px;
+    position: relative;
+}
+
+input::-moz-focus-inner {
+    border: 0; 
+}
+
+.todos { 
+    position: relative;
+    background: antiquewhite;
+    padding: 20px;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+}
+
+.todos ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.todos ul li {
+    position: relative;
+    height: 34px; 
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+
+    /*border: 1px solid black;*/
+}
+
+.todos input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.todos input[type="text"] {
+    border-radius: 3px;
+    font-size: 0.9em;
+    padding: 5px;
+    width: 47.5%; 
+}
+
+.todos {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;          
+}
+
+.completed {
+    text-decoration: line-through;
+    background: #ddd;
+}
+
+.starRating {
+    position: relative;
+    bottom: 0;
+    display: inline-block;
+    float:right;
+    margin-right: 10px;    
+    top: 4px;
+}
+
+.starRating span {
+    background: url("../img/stars.png");  
+    background-position: -24px 0;
+    width: 24px !important;
+    height: 24px !important;
+    display: inline-block;
+    *display: inline;
+    vertical-align: text-bottom;
+}
+
+.starRating .hoverChosen {
+    background-position: 0 0; 
+}
+
+.starRating .chosen {
+    background-position: 0 0; 
+}
+
+.timer {
+    line-height: 34px;
+    float: right;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* buttons */
+
+.add {    
+    width: 32px;
+    height: 32px;    
+    background: url("../img/add-icon.png") center center no-repeat;
+    background-position: 0 0;
+    position: relative;
+    left: -18px;
+    text-indent: -9999px;
+    border: 0;
+    padding: 0 0 -32px 0;        
+    outline: none;   
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    cursor: pointer;
+}
+
+.add:active {
+    top: 1px;
+}
+
+.add:hover, .add:active, .add:focus {
+    outline: none;    
+}
+
+.add::-moz-focus-inner {
+    border: 0;
+}
+
+.remove {
+    position: relative;
+    background: url("../img/times24.png") center center no-repeat;
+    background-position: 0 0;
+    width: 24px;
+    height: 24px;       
+    text-indent: -9999px;
+    border: 0;
+    padding: 0;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-user-focus: ignore;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 24px;
+    margin-left: 6px;
+}
+
+.remove:active {
+    width: 22px;
+    height: 22px;       
+    background: url("../img/times20.png") center center no-repeat;
+    background-position: 2px 2px;
+}
+
+.remove:active, .remove:focus, .remove:hover {
+    outline: none;
+}
+
+.remove::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Custom checkbox */
+input[type=checkbox].css-checkbox { 
+    position: absolute;
+    overflow: hidden; 
+    clip: rect(0 0 0 0);
+    height:1px;
+    width:1px; 
+    margin:-1px; 
+    padding:0;
+    border:0;
+} 
+
+input[type=checkbox].css-checkbox + label.css-label { 
+    padding-left:20px; 
+    height:16px;
+    display:inline-block; 
+    line-height:16px; 
+    background-repeat:no-repeat; 
+    background-position: 0 0;
+    font-size:15px; 
+    vertical-align:middle;
+    cursor:pointer; 
+}  
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -16px;
+} 
+
+.css-label{
+    background-image: url("../img/depressed.png");
+}
+

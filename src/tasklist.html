@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Task List</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/tasklist.css">
+    </head>
+    <body>
+        <div class="container">            
+            <div class="in">
+                <h2>Task List</h2>
+                <h3>Enter a new task to do:</h3>
+                <input type="text" data-bind="value: todo">
+                <button class="add" type="button" data-bind="click: addTask">add</button>
+            </div>
+            <div class="todos">
+                <ul data-bind="foreach: todos">
+                    <li>
+                        <input id="task-check1" class="css-checkbox" type="checkbox" data-bind="checked: completed"/>
+                        <label for="task-check1" class="css-label"></label>
+                        <input type="text" data-bind="value: todo, enable: !completed, css: {completed: completed}">
+                        <input type="button" class="remove" data-bind="click: $root.removeTask">
+                        <span class="timer" data-bind="value: timer"></span>
+                        <div data-bind="starRating: importance"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/knockout-2.1.0.js"></script>
+        <script type="text/javascript" src="models/tasklist.js"></script>
+    </body>
+</html>

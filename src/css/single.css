@@ -1,5 +1,24 @@
 /* Main CSS */
 
+/* Star Rating */
+
+.starRating span {
+   background: url("../img/stars.png");  
+   background-position: -24px 0;
+   width: 24px !important;
+   height: 24px !important;
+   display: inline-block;
+   *display: inline;
+}
+
+.starRating .hoverChosen {
+   background-position: 0 0; 
+}
+
+.starRating .chosen {
+   background-position: 0 0; 
+}
+
 .container {
     padding: 10px 10px;
 }
